@@ -1,35 +1,30 @@
 1.Difference between HTTP1.1 vs HTTP2 :
 
 HTTP1
-->Ithe usest works on the textual format.
-->There is head of line blocking that blocks all the requests behind it until it doesn’t get its all resources.
-->It uses requests resource Inlining for use getting multiple pages
-->It compresses data by itself.
+-Ithe usest works on the textual format.
+-There is head of line blocking that blocks all the requests behind it until it doesn’t get its all resources.
+-It uses requests resource Inlining for use getting multiple pages
+-It compresses data by itself.
 
 HTTP2
-->It works on the binary protocol.
-->It allows multiplexing so one TCP connection is required for multiple requests.
-->It uses PUSH frame by server that collects all multiple pages 
-->It uses HPACK for data compression.
-->HTTP2 is much faster and more reliable than HTTP1.
+-It works on the binary protocol.
+-It allows multiplexing so one TCP connection is required for multiple requests.
+-It uses PUSH frame by server that collects all multiple pages 
+-It uses HPACK for data compression.
+-HTTP2 is much faster and more reliable than HTTP1.
 
 2.objects and its internal representation in Javascript :
 
-    Objects are important data types in javascript. 
-Objects are different than primitive datatypes (i.e. number, string, boolean, etc.). 
-Primitive data types contain one value but Objects can hold many values in form of Key: value pair.
-These keys can be variables or functions and are called properties and methods, respectively, 
-in the context of an object
+Objects are one of the fundamental data structures in Javascript, and they play a crucial role in the development of modern web applications. An object is a collection of key-value pairs that can store data and provide methods for accessing and manipulating that data. In Javascript, objects can be created in various ways, and their properties can be dynamically added, deleted, or modified. In this blog, we will dive into the internal representation of objects in Javascript and how they work.
 
-  Every object has some property associated with some value.
-These values can be accessed using these properties associated with them.
+The internal representation of objects in Javascript is an unordered collection of properties. Each property has a key and a value, and the key is a string that represents the name of the property. The value can be any type of data, including primitive values like numbers and strings, objects, and functions. The properties of an object are stored in an internal hash table, where the key is used as the hash key to quickly access the value.
 
-var myCar = new Object();
+One of the most common ways to create objects in Javascript is by using the object literal syntax, where properties are defined inside curly braces. For example:
 
-myCar.make = 'Suzuki';
-
-myCar.model = 'Altros';
-
-myCar.year = 1978;
-
-myCar.wheels = 2;
+var obj = {
+  name: "John",
+  age: 30,
+  greet: function() {
+    console.log("Hello, my name is " + this.name);
+  }
+};
